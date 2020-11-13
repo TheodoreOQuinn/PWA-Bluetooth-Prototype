@@ -1,0 +1,10 @@
+﻿# Settings of your Application
+$webappname = HackserverPWABluetooth
+$gitUser = Team1User
+$gitPW = Te@m1U5er
+$webappdir = NodeServer
+$resourceGroupName = flexiotdemo
+$AppServicePlan = PWABluetoothServicePlan
+$giturl = https://Team1User@hackserverpwabluetooth.scm.azurewebsites.net/HackserverPWABluetooth.git
+$giturl2 = https://Team1User@hackserverpwabluetooth.scm.azurewebsites.net:443/HackserverPWABluetooth.git
+$AppUrl = http://HackserverPWABluetooth.azurewebsites.net
