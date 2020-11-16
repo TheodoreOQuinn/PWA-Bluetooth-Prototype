@@ -92,7 +92,7 @@ Für das wurde mit [Advanced IP Scanner](https://www.advanced-ip-scanner.com/) j
 Mit [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) wurden normale SSH Sessions gemacht.
 Und Dateien wurden mit [WinSCP](https://winscp.net/eng/download.php) auf das Gerät geladen.
 
-Bei dem Versuch ein Bluetooth Peripheral auf dem Rasperberry Pi aufzusetzten hat mir der folgende Blopost sehr geholfen:
+Bei dem Versuch ein Bluetooth Peripheral auf dem Rasperberry Pi aufzusetzten hat mir der folgende Blogpost sehr geholfen:
 
 https://punchthrough.com/creating-a-ble-peripheral-with-bluez/
 

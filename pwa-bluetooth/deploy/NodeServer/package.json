@@ -1,0 +1,14 @@
+{
+  "name": "NodeServer",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "express": "~4.15.5",
+    "express-ws": "~4.0.0",
+    "normalize-port": "~1.0.0"
+  }
+}
