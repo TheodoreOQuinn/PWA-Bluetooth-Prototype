@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy-local": "ng build --prod & http-server -p 8080 -c-1 dist\\pwa-bluetooth",
     "deploy": "npm run build-azure & npm run deploy-azure",
     "build-azure": "ng build --prod & copy web.config dist\\pwa-bluetooth",
     "deploy-azure":  "cd dist\\pwa-bluetooth & az webapp up --name bluetoothDemo --resource-group flexiotdemo --plan PWABluetoothServicePlan --location westeurope --html",
