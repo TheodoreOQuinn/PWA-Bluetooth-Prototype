@@ -1,10 +1,20 @@
+<mat-toolbar color="primary">
+    Flexiot Bluetooth Demo <mat-icon>battery_full</mat-icon>
+</mat-toolbar>
 
-<div>
-    {{batteryLevel}}
+
+<div class="demo-content">
+    <button className="some-space" mat-raised-button color="primary" (click)="discoverAnyDevice()">Connect to Device</button> 
+
+    <p>Battery Level: {{batteryLevel}}</p>
+
+    <h1>Internals</h1>
+    <mat-card className="light-gray-bg">
+        <p *ngFor="let line of logContent">
+            {{line}}
+        </p>
+    </mat-card>
 </div>
 
-<div> Auto deploy test Vol. 2</div>
-
-<button (click)="discoverAnyDevice()">Search Device<button></button>
 
 <router-outlet></router-outlet>

@@ -14,11 +14,12 @@ export class AppComponent {
 
   title = 'pwa-bluetooth';
   private batteryLevel$: Observable<number>;
-  public server: BluetoothRemoteGATTServer;
   public batteryLevel: number;
+  public logContent: string[];
 
-
-  constructor(private bleCore: BluetoothCore) {}
+  constructor(private bleCore: BluetoothCore) {
+    this.logContent = [];
+  }
 
   public discoverAnyDevice() {
     this.batteryLevel$ = this.bleCore.discover$(
@@ -27,16 +28,19 @@ export class AppComponent {
 
         // 2) get that service
         mergeMap((gatt: BluetoothRemoteGATTServer) => {
+          this.log('Connected To Device...');
           return this.bleCore.getPrimaryService$(gatt, AppComponent.GATT_PRIMARY_SERVICE);
         }),
 
         // 3) get a specific characteristic on that service
         mergeMap((primaryService: BluetoothRemoteGATTService) => {
+          this.log('Getting Service ...');
           return this.bleCore.getCharacteristic$(primaryService, AppComponent.GATT_CHARACTERISTIC_BATTERY_LEVEL);
         }),
 
         // 4) ask for the value of that characteristic (will return a DataView)
         mergeMap((characteristic: BluetoothRemoteGATTCharacteristic) => {
+          this.log('Getting Characteristic ...');
           return this.bleCore.observeValue$(characteristic);
         }),
 
@@ -46,7 +50,12 @@ export class AppComponent {
 
     this.batteryLevel$.subscribe(n => {
         this.batteryLevel = n;
-        console.log(n);
+        this.log('Battery Level: ' + n + '%');
       });
+  }
+
+  private log(message: string) {
+    this.logContent.push(message);
+    console.log(message);
   }
 }

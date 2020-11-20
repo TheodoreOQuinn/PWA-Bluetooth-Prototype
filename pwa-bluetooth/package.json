@@ -8,7 +8,7 @@
     "deploy-local": "ng build --prod & http-server -p 8080 -c-1 dist\\pwa-bluetooth",
     "deploy": "npm run build-azure & npm run deploy-azure",
     "build-azure": "ng build --prod & copy web.config dist\\pwa-bluetooth",
-    "deploy-azure":  "cd dist\\pwa-bluetooth & az webapp up --name bluetoothDemo --resource-group flexiotdemo --plan PWABluetoothServicePlan --location westeurope --html",
+    "deploy-azure": "cd dist\\pwa-bluetooth & az webapp up --name bluetoothDemo --resource-group flexiotdemo --plan PWABluetoothServicePlan --location westeurope --html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -16,10 +16,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.2",
+    "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.0.2",
     "@angular/compiler": "~9.0.2",
     "@angular/core": "~9.0.2",
     "@angular/forms": "~9.0.2",
+    "@angular/material": "^9.2.4",
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
